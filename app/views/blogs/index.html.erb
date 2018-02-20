@@ -12,8 +12,9 @@
   </tr>
   <tr>
   <% @blogs.each do |blog| %>
-    <td><%= blog.title %></td>
+    <td><%=link_to blog.title, blog_path(blog) %></td>
     <td><%= blog.body %></td>
+    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
   </tr>
   <% end %>
 </table>
