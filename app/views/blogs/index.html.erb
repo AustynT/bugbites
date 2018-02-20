@@ -6,16 +6,16 @@
 <body>
 <h1>This is my Index Page</h1>
 <table>
-<tr>
-  <th>Title</th>
-  <th>Body</th>
-</tr>
-<tr>
-<% @blogs.each do |blog| %>
-<td><%= blog.title %></td>
-<td><%= blog.body %></td>
-</tr>
-<% end %>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+  <tr>
+  <% @blogs.each do |blog| %>
+    <td><%= blog.title %></td>
+    <td><%= blog.body %></td>
+  </tr>
+  <% end %>
 </table>
 </body>
 </html>

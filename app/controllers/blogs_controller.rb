@@ -25,6 +25,11 @@ class BlogsController < ApplicationController
     end
 
   def update
+    if @blog.update(blog_params)
+      redirect_to @blog, notice: "You have updated your blogs post"
+    else
+      render :edit
+    end
   end
 
   def destroy
