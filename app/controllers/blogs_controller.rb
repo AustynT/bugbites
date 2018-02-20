@@ -16,6 +16,14 @@ class BlogsController < ApplicationController
   end
 
   def create
+    @blog = Blog.new(blog_params)
+
+    if @blog.save
+      redirect_to @blog, notice: 'Your post is live'
+    else
+      render :new
+     end
+    end
   end
 
   def update
