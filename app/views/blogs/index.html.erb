@@ -6,5 +6,11 @@
 <body>
 <h1>This is my Index Page</h1>
 
+<% @blogs.each do |blog| %>
+<%= blog.title %>
+<%= blog.body %>
+
+<% end %>
+
 </body>
 </html>
