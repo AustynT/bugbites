@@ -17,6 +17,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
+    
     if @blog.save
       redirect_to @blog, notice: 'Your post is live'
     else
@@ -41,12 +42,10 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:title,:body, :main_photo)
+    params.require(:blog).permit(:title,:body, :main_photo, :state_id)
   end
 
   def set_blog
     @blog = Blog.find(params[:id])
   end
-
-
 end

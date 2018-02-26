@@ -1,7 +1,6 @@
 class StatesController < ApplicationController
   before_action :set_state, only: [:show,:edit,:update,:destroy]
 
-
   def index
     @states = State.all
   end
@@ -11,7 +10,13 @@ class StatesController < ApplicationController
   end
 
   def create
-    @state = State.new(states_params)
+    @state = State.new(state_params)
+    
+    if @state.save
+      redirect_to @state, notice: "You've created a state"
+    else
+      render :new
+    end
   end
 
   def show
@@ -34,7 +39,7 @@ class StatesController < ApplicationController
   end
 
   def state_params
-    params.require(:state).permit(:name)
+    params.require(:state).permit(:name, :country_id)
   end
 
 end

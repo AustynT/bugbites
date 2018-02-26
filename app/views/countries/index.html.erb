@@ -2,4 +2,5 @@
 
 <% @countries.each do |country| %>
   <%= link_to country.name, controller: "countries", action: "show", id: country.id %>
+  <%= link_to 'Edit', edit_country_path(country) %>
 <% end %>
