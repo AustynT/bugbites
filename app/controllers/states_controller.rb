@@ -1,21 +1,25 @@
 class StatesController < ApplicationController
+  before_action :set_state, only: [:show,:edit,:update,:destroy]
+
+
   def index
     @states = State.all
   end
+
   def new
-    @states = States.new
+    @state = State.new
   end
 
   def create
-    @states = States.new(states_params)
+    @state = State.new(states_params)
   end
 
   def show
-    @state = State.find(params[:id])
+
   end
 
   def edit
-    @state = State.find(params[:id])
+
   end
 
   def destroy
@@ -24,6 +28,10 @@ class StatesController < ApplicationController
   end
 
   private
+
+  def set_state
+    @state = State.find(params[:id])
+  end
 
   def state_params
     params.require(:state).permit(:name)
