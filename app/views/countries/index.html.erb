@@ -1,6 +1,5 @@
 <h1> This is the Countries index page</h1>
 
 <% @countries.each do |country| %>
-   <!-- country.states.each do |state -->
   <%= link_to country.name, controller: "countries", action: "show", id: country.name %>
 <% end %>

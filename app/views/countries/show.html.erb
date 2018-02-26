@@ -1,4 +1,7 @@
 <h1>This is the country show page</h1>
 
-<%= @country.inspect%>
+<%= @country.name %>
 
+<% @country.states.each do |state| %>
+  <%= link_to state.name, controller: "states", action: 'show', id: state.id  %>
+<% end %>
