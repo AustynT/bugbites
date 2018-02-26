@@ -8,8 +8,12 @@ class CountriesController < ApplicationController
     @country = Country.new(country_params)
   end
 
+  def new
+    @country = Country.new
+  end
+
   def show
-    @country = Country.find_by_name(params[:name])
+    @country = Country.find(params[:id])
   end
 
   private
