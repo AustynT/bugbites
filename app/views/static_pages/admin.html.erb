@@ -7,22 +7,30 @@
 <body>
 
 <h1>This will be my admin page.</h1>
-  <table>
-    <tr>
-      <th>Country</th>
-      <th>State</th>
-      <th>Blog Title</th>
-    </tr>
-    <tr>
+ <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Countries
+  </a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
+
+
+
       <% @countries.each do |country| %>
-        <td><%= link_to country.name, country_path(country) %></td>
+<%= link_to country.name, country_path(country) %>
 
         <% country.states.each do |state| %>
-          <td><%= link_to state.name, controller: 'states', action: "show", id:state  %></td>
+        <%= link_to state.name, controller: 'states', action: "show", id:state  %>
 
         <% state.blogs.each do |blog| %>
-        <td><%= link_to blog.title, controller: 'blogs', action: "show", id:blog  %></td>
-    </tr> 
+        <%= link_to blog.title, controller: 'blogs', action: "show", id:blog  %>
+
 
           <% end %>
         <% end %>
