@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/about_me'
+  get 'static_pages/about_me', to: "static_pages#about_me", as: "about_me"
 
   devise_for :users
   resources :states
