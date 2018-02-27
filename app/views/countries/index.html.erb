@@ -1,6 +1,22 @@
-<h1> This is the Countries index page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <table>
+    <tr>
+      <% @countries.each do |country| %>
+        <th><%= link_to country.name, country_path(country) %></th>
+    </tr>
+    <tr>
+        <% country.states.each do |state| %>
+          <td><%= link_to state.name, controller: 'states', action: "show", id:state  %></td>
+    </tr> 
 
-<% @countries.each do |country| %>
-  <%= link_to country.name, controller: "countries", action: "show", id: country.id %>
-  <%= link_to 'Edit', edit_country_path(country) %>
-<% end %>
+
+        <% end %>
+      <% end %>
+</table>
+</body>
+</html>

@@ -2,7 +2,7 @@ class CountriesController < ApplicationController
 before_action :set_country, only: [:show,:edit,:update,:destroy]
 
   def index
-    @countries = Country.includes(:states).all
+    @countries = Country.all
   end
 
   def edit
