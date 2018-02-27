@@ -27,6 +27,14 @@ class StatesController < ApplicationController
 
   end
 
+  def update
+    if @state.update(state_params)
+      redirect_to @state
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @state.destroy
     redirect_to states_path
