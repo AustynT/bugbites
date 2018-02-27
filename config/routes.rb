@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :states
   resources :countries, except: [:show]
   resources :blogs
