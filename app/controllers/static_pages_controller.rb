@@ -4,4 +4,8 @@ class StaticPagesController < ApplicationController
 
   def about_me
   end
+
+  def admin
+    @countries = Country.order('name ASC')
+  end
 end

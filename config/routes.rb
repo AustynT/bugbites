@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'static_pages/about_me', to: "static_pages#about_me", as: "about_me"
+  get 'admin', to: 'static_pages#admin', as: 'admin'
 
   devise_for :users
   resources :states

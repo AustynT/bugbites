@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<h1>This will be my admin page.</h1>
+  <table>
+    <tr>
+      <th>Country</th>
+      <th>State</th>
+      <th>Blog Title</th>
+    </tr>
+    <tr>
+      <% @countries.each do |country| %>
+        <td><%= link_to country.name, country_path(country) %></td>
+
+        <% country.states.each do |state| %>
+          <td><%= link_to state.name, controller: 'states', action: "show", id:state  %></td>
+
+        <% state.blogs.each do |blog| %>
+        <td><%= link_to blog.title, controller: 'blogs', action: "show", id:blog  %></td>
+    </tr> 
+
+          <% end %>
+        <% end %>
+      <% end %>
+</table>
+
+</body>
+</html>
