@@ -1,16 +1,36 @@
 <%= form_for @blog do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <div class="card">
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+        <%= f.text_field :title, class: "form-control", placeholder: "title" %>
+      </div>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %>
+      <div class="form-group">
+        <%= f.label :body %>
+        <%= f.text_area :body, class: "form-control", rows: 10 %>
+      </div>
+        </div>
 
- <%= f.collection_select(:state_id, State.all, :id, :name ) %>
+      <div class="form-group">  
+        <%= f.collection_select(:state_id, State.all, :id, :name, {
+                                include_blank: true
+                              },class: "form-control"  )%>
+        <%= f.label :state_id %>
+      </div>
 
-  <%= f.fields_for :photos do |photo_form| %>
-  <%= photo_form.label :my_photo %>
-  <%= photo_form.text_field :my_photo %>
-  <% end %>
-  <%= f.submit "Save" %>
-
+        <%= f.fields_for :photos do |photo_form| %>
+          <div class="form-group">
+            <%= photo_form.file_field :my_photo, class: "form-control" %>
+        <% end %>
+          </div>
+</div>
+<div class="row">
+<div class="save-button">
+<%= f.submit "Save", class: 'form-control' %>
 <% end %>
+</div>
+</div>
+</form>
+</div>
