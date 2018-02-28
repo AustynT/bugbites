@@ -33,6 +33,11 @@ before_action :set_country, only: [:show,:edit,:update,:destroy]
     end
   end
 
+  def destroy
+    @country.destroy
+    redirect_to admin_path
+  end
+
   private
 
   def set_country

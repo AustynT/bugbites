@@ -7,5 +7,7 @@ class StaticPagesController < ApplicationController
 
   def admin
     @countries = Country.order('name ASC')
+    @states = State.all
+    @blogs = Blog.all
   end
 end
