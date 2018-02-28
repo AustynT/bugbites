@@ -7,12 +7,14 @@ class BlogsController < ApplicationController
 
   def new
     @blog = Blog.new
+    1.times { @blog.photos.build }
   end
 
   def show
   end
 
   def edit
+    1.times { @blog.photos.build }
   end
 
   def create

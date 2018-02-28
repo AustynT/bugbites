@@ -7,6 +7,10 @@
 
  <%= f.collection_select(:state_id, State.all, :id, :name ) %>
 
+  <%= f.fields_for :photos do |photo_form| %>
+  <%= photo_form.label :my_photo %>
+  <%= photo_form.text_field :my_photo %>
+  <% end %>
   <%= f.submit "Save" %>
 
 <% end %>
