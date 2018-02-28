@@ -4,19 +4,19 @@
   <title>Index Page</title>
 </head>
 <body>
-<h1>This is my Index Page</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-  </tr>
-  <tr>
+  <div class="container">
   <% @blogs.each do |blog| %>
-    <td><%=link_to blog.title, blog_path(blog) %></td>
-    <td><%= blog.body %></td>
-    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-  </tr>
+    <div class="card" style="width: 18rem;">
+      <%= image_tag blog.main_photo %>
+      <div class="card-body">
+        <h5 class="card-title"><%=link_to blog.title, blog_path(blog) %></h5>
+        <p class="card-text"><%= blog.body %></p>
+        <%= link_to 'Edit', edit_blog_path(blog) %>
+      </div>
+    </div>
+  
+
   <% end %>
-</table>
+</div>
 </body>
 </html>
