@@ -1,6 +1,22 @@
-<h1>This is the show page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div class="card" style="width: 18rem;">
+  <%= image_tag @blog.main_photo %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @blog.title %></h5>
+    <p class="card-text"><%= @blog.body %></p>
+    <%= link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: "Are you sure you want to remove this?"} %>
+    <%= link_to 'Edit', edit_blog_path(@blog) %>
+  </div>
+</div>
 
-<%= @blog.title %>
-<%= @blog.body %>
-<%= image_tag @blog.main_photo %>
-<%= link_to 'Destroy', blog_path(@blog), method: :delete, data: { confirm: "Are you sure you want to remove this?"} %>
+</body>
+</html>
+
+
+
+
