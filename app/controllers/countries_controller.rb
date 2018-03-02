@@ -1,5 +1,6 @@
 class CountriesController < ApplicationController
 before_action :set_country, only: [:show,:edit,:update,:destroy]
+layout 'blog'
 
   def index
     @countries = Country.asc_order

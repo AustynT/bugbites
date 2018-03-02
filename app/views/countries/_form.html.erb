@@ -1,5 +1,11 @@
 <%= form_for @country do |f| %>
+  <div class="card country_card">
+    <form>
+      <div class="form-group">
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>
+        </div>
+    </form>
+  </div>
 <% end %>
