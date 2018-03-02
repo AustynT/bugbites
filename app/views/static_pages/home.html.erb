@@ -4,8 +4,19 @@
   <title>Home Page</title>
 </head>
 <body>
-<h1>Home Page</h1>
+  <div class="container">
+  <% @blog.each do |blog| %>
+    <div class="card" style="width: 20rem;">
+      <%= image_tag blog.main_photo %>
+      <div class="card-body">
+        <h5 class="card-title"><%=link_to blog.title, blog_path(blog) %></h5>
+        <p class="card-text"><%= blog.body %></p>
+        
+      </div>
+    </div>
+  
 
-<p><%= link_to "About me", about_me_path %></p>
+  <% end %>
+</div>
 </body>
 </html>

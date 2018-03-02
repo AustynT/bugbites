@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @blog = Blog.order("RANDOM()").limit(1)
   end
 
   def about_me
