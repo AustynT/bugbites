@@ -1,5 +1,14 @@
 @import "bootstrap";
 
+body {
+  top: 50%;
+  left: 50%;
+  background: url('the-sail-boat.jpg') no-repeat;
+  background-attachment:fixed;
+  background-size:cover;
+  overflow: scroll;
+}
+
 .nav-item a  {
   margin: 10px;
 }
@@ -10,4 +19,13 @@
   margin-bottom: 5%;
   margin-top: 5%;
   width: 100%;
+}
+
+.about-me-card {
+  max-width: 50%
+}
+
+p {
+  padding: 2%;
+
 }
