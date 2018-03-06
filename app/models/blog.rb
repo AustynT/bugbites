@@ -4,7 +4,7 @@ class Blog < ApplicationRecord
 
   mount_uploader :main_photo, BlogUploader
   mount_uploader :photo_one, BlogUploader
-  mount_uploader :photo_twp, BlogUploader
+  mount_uploader :photo_two, BlogUploader
   mount_uploader :photo_three, BlogUploader
   mount_uploader :photo_four, BlogUploader
   mount_uploader :photo_five, BlogUploader

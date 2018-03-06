@@ -38,14 +38,6 @@ ActiveRecord::Schema.define(version: 20180306162546) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.text "my_photo"
-    t.integer "blog_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["blog_id"], name: "index_photos_on_blog_id"
-  end
-
   create_table "states", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
