@@ -14,10 +14,7 @@
         </div>
         <div class="col-md-6">
           <div class="form-group country_state_select">  
-            <%= f.collection_select(:country, Country.all, :id, :name, {
-                                    include_blank: true
-                                    },class: "form-control"  )%>
-            <%= f.label :country_id %>
+
             <%= f.collection_select(:state_id, State.all, :id, :name, {
                                     include_blank: true
                                     },class: "form-control"  )%>

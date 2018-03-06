@@ -46,7 +46,7 @@ class BlogsController < ApplicationController
     params.require(:blog).permit(:title,
                                  :body,
                                  :state_id, 
-                                 :country_id,
+                                 :country,
                                  :main_photo, 
                                  :photo_one,
                                  :photo_two,

@@ -15,10 +15,4 @@ class Blog < ApplicationRecord
   mount_uploader :photo_ten, BlogUploader
 
 
-
-  after_initialize :set_defaults
-  
-  def set_defaults
-    self.main_photo = "http://placehold.it/300x250"
-  end
 end
