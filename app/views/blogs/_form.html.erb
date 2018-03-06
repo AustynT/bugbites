@@ -7,33 +7,55 @@
             <%= f.text_field :title, class: "form-control", placeholder: "title" %>
           </div>
 
+          <div class="form-group">
+            <%= f.label :body %>
+            <%= f.text_area :body, class: "form-control", rows: 10 %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group country_state_select">  
+            <%= f.collection_select(:country, Country.all, :id, :name, {
+                                    include_blank: true
+                                    },class: "form-control"  )%>
+            <%= f.label :country_id %>
+            <%= f.collection_select(:state_id, State.all, :id, :name, {
+                                    include_blank: true
+                                    },class: "form-control"  )%>
+            <%= f.label :state_id %>
+          </div>
         <div class="form-group">
-          <%= f.label :body %>
-          <%= f.text_area :body, class: "form-control", rows: 10 %>
+          <h5>Thumb Imagine:</h5>  
+              <%= f.file_field :main_photo %>
+          </div>
+          <div class="form-group">
+            <h6>Photo One:</h6>
+              <%= f.file_field :photo_one %>
+            <h6>Photo Two: </h6>
+              <%= f.file_field :photo_two %>
+            <h6>Photo Three: </h6>
+              <%= f.file_field :photo_three %>
+            <h6>Photo Four: </h6>
+              <%= f.file_field :photo_ten %>        
+            <h6>Photo Five:</h6>
+              <%= f.file_field :photo_four %>
+            <h6>Photo Six:</h6>
+              <%= f.file_field :photo_five %>
+            <h6>Photo Seven: </h6>
+              <%= f.file_field :photo_six %>
+            <h6>Photo Eight: </h6>
+              <%= f.file_field :photo_seven %>
+            <h6>Photo Nine </h6>
+              <%= f.file_field :photo_eight %>
+            <h6>Photo Ten: </h6>
+              <%= f.file_field :photo_nine %>
+          </div>  
         </div>
-      </div>
+        <div class="row">
 
-      <div class="form-group">  
-          <%= f.collection_select(:state_id, State.all, :id, :name, {
-include_blank: true
-},class: "form-control"  )%>
-          <%= f.label :state_id %>
-        </div>
-
-          <%= f.fields_for :photos do |photo_form| %>
-            <div class="form-group">
-              <%= photo_form.file_field :my_photo, class: "form-control" %>
-              <%= photo_form.file_field :my_photo, class: "form-control" %>
-              <%= photo_form.file_field :my_photo, class: "form-control" %>
-              
-          <% end %>
-            </div>
-      </div>
-      <div class="row">
-        <div class="save-button">
-          <%= f.submit "Save", class: 'form-control' %>
-<% end %>
-        </div>
+          <div class="save-button">
+            <%= f.submit "Save", class: 'form-control' %>
+            <% end %> 
+          </div>
       </div>
   </form>
 </div>

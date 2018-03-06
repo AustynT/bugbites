@@ -8,14 +8,12 @@ class BlogsController < ApplicationController
 
   def new
     @blog = Blog.new
-    1.times { @blog.photos.build }
   end
 
   def show
   end
 
   def edit
-    1.times { @blog.photos.build }
   end
 
   def create
@@ -45,7 +43,21 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:title,:body, :main_photo, :state_id, photos_attributes: [:my_photo])
+    params.require(:blog).permit(:title,
+                                 :body,
+                                 :state_id, 
+                                 :country_id,
+                                 :main_photo, 
+                                 :photo_one,
+                                 :photo_two,
+                                 :photo_three,
+                                 :photo_four,
+                                 :photo_five,
+                                 :photo_six,
+                                 :photo_seven,
+                                 :photo_eight,
+                                 :photo_nine,
+                                 :photo_ten)
   end
 
   def set_blog
