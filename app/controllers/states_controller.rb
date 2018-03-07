@@ -1,5 +1,6 @@
 class StatesController < ApplicationController
   before_action :set_state, only: [:show,:edit,:update,:destroy]
+  access all: [:show, :index], user: :all
   layout "blog"
 
   def index

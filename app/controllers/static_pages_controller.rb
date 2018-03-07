@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  access all: [:home, :about_me], user: :all
   def home
     @blog = Blog.order("RANDOM()").limit(1)
   end

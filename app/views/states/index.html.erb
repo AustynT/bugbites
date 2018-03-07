@@ -14,8 +14,10 @@
             <%= link_to state.name, state_path(state) %>
           </div>
           <div class="col-md-6">
+            <% if logged_in?(:user) %>
             <%= link_to "Edit", edit_state_path(state) %>
             <%= link_to "Destroy", state, method: :delete, data: { confirm: "Are you sure you want to delete this state?"} %>
+            <% end %>
           </div>
           </div>
         </div>
