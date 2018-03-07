@@ -3,7 +3,7 @@
 body {
   top: 50%;
   left: 50%;
-  background: url('the-sail-boat.jpg') no-repeat;
+  background-image: image-url('the-sail-boat.jpg') no-repeat;
   background-attachment:fixed;
   background-size:cover;
   overflow: scroll;
