@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20180306162546) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.text "main_photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "state_id"
+    t.bigint "state_id"
     t.text "photo_one"
     t.text "photo_two"
     t.text "photo_three"
@@ -42,7 +45,7 @@ ActiveRecord::Schema.define(version: 20180306162546) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "country_id"
+    t.bigint "country_id"
     t.index ["country_id"], name: "index_states_on_country_id"
   end
 
@@ -64,4 +67,6 @@ ActiveRecord::Schema.define(version: 20180306162546) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "blogs", "states"
+  add_foreign_key "states", "countries"
 end
